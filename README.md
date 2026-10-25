@@ -1,6 +1,6 @@
 # Salmer og sanger for barn og ungdom
 
-En sangbok som webapp, med de 159 salmene og sangene fra heftet *Salmer og sanger for barn og ungdom* (1995) og Tysfjordsangen. Den kjøres fra GitHub Pages og virker i moderne nettlesere på mobil, nettbrett og datamaskin. Den kan installeres som en app (PWA) og brukes helt uten nett.
+En sangbok som webapp, med de 159 salmene og sangene fra heftet *Salmer og sanger for barn og ungdom* (1995). Den kjøres fra GitHub Pages og virker i moderne nettlesere på mobil, nettbrett og datamaskin. Den kan installeres som en app (PWA) og brukes helt uten nett.
 
 **Åpne sangboken:** https://salmer-og-sanger.github.io/
 
@@ -10,7 +10,7 @@ En sangbok som webapp, med de 159 salmene og sangene fra heftet *Salmer og sange
 - **Søk på ord:** skriv ett eller flere ord, f.eks. `nåde` eller `graven brast`. Treffene viser hvilket vers ordet står i, og ordene er uthevet i sangen. Svensk ö/ä finnes også når du skriver ø/æ.
 - **Hele sangen** vises med nummererte vers, omkved (Kor) markert og repetisjonstegn (:/:).
 - **Bla** til forrige og neste sang, og velg **tekststørrelse** (A / A).
-- **Innhold** etter seksjon: Barn, Salmer og sanger, 17. mai, Advent, Jul, Påske, Pinse, Konfirmasjon og Tysfjordsangen.
+- **Innhold** etter seksjon: Barn, Salmer og sanger, 17. mai, Advent, Jul, Påske, Pinse og Konfirmasjon.
 - **Sist åpnet** blir husket på enheten.
 - **Direkte lenke** til en sang: https://salmer-og-sanger.github.io/#49
 - **Offline:** etter første besøk kan sangboken brukes uten nett.
