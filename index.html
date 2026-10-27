@@ -247,6 +247,15 @@ mark { background: var(--accent); color: var(--hit-ink); padding: 0 2px; border-
 .song-nav small { display: block; color: var(--accent); font-weight: 600; }
 .song-nav span { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--muted); }
 .source { margin: 24px 0 0; font-size: 14px; color: var(--muted); }
+.outside {
+  margin: 16px 0 0;
+  padding: 6px 12px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  background: var(--accent-soft);
+  font-size: 14px;
+  color: var(--muted);
+}
 
 .update {
   position: fixed;
@@ -708,10 +717,16 @@ mark { background: var(--accent); color: var(--hit-ink); padding: 0 2px; border-
         if (i) source.appendChild(document.createElement("br"));
         source.appendChild(document.createTextNode(text));
       });
-    } else {
+    } else if (!song.skjult) {
       source.textContent = DATA.meta.tittel + " (" + DATA.meta.aar + ").";
     }
-    songBody.appendChild(source);
+    if (source.firstChild) songBody.appendChild(source);
+    if (song.skjult) {
+      var outside = document.createElement("p");
+      outside.className = "outside";
+      outside.textContent = "Denne sangen er ikke en del av salmeboken «" + DATA.meta.tittel + "».";
+      songBody.appendChild(outside);
+    }
 
     prevBtn.disabled = !neighbour(song, -1);
     nextBtn.disabled = !neighbour(song, 1);
@@ -803,7 +818,7 @@ mark { background: var(--accent); color: var(--hit-ink); padding: 0 2px; border-
   // Offline-støtte. Service workeren finnes bare når appen lastes fra en nettadresse, ikke som lokal fil.
   // Siden vises fra cache, så en ny versjon blir lastet ned i bakgrunnen. Når det finnes en cache
   // med en annen versjon enn denne siden, tilbyr vi å laste inn på nytt.
-  var VERSION = "615846f654a0";
+  var VERSION = "912046d0368c";
   function showUpdate() { document.getElementById("update").hidden = false; }
   function checkForUpdate() {
     caches.keys().then(function (keys) {
